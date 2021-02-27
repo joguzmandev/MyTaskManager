@@ -5,10 +5,10 @@ import androidx.room.Room
 
 object TaskDatabaseBuilder {
 
-    private var INSTANCE: TaskAppDatabase? = null
+    private var INSTANCE: TaskDatabase? = null
 
-    fun getInstance(context: Context): TaskAppDatabase {
-        return INSTANCE ?: synchronized(TaskAppDatabase::class.java) {
+    fun getInstance(context: Context): TaskDatabase {
+        return INSTANCE ?: synchronized(TaskDatabase::class.java) {
             INSTANCE = buildRoomDb(context)
             INSTANCE!!
         }
@@ -17,7 +17,7 @@ object TaskDatabaseBuilder {
     private fun buildRoomDb(context: Context) =
         Room.databaseBuilder(
             context.applicationContext,
-            TaskAppDatabase::class.java,
+            TaskDatabase::class.java,
             "task_manager_room_db"
         ).build()
 }

@@ -6,7 +6,7 @@ import com.jguzmandev.mytaskmanager.domain.entity.CategoryTask
 import com.jguzmandev.mytaskmanager.domain.entity.Task
 
 @Database(entities = [Task::class, CategoryTask::class], version = 1)
-abstract class TaskAppDatabase : RoomDatabase() {
+abstract class TaskDatabase : RoomDatabase() {
 
     abstract fun taskDao(): TaskDAO
 }
