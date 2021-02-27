@@ -1,9 +1,12 @@
 package com.jguzmandev.mytaskmanager.domain.entity
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.jguzmandev.mytaskmanager.utils.DateHelpers
 
+@Entity
 data class Task constructor(
-    val id: String = "",
+    @PrimaryKey val id: String = "",
     val title: String = "",
     val description: String = "",
     val categoryTask: CategoryTask,
